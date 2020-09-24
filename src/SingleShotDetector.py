@@ -3,7 +3,7 @@ import multiprocessing as mp
 import time
 import random
 from src.DetectionVector import DetectionVector
-
+import config.config as cfg
 logger = logging.getLogger(__name__)
 
 
@@ -23,7 +23,7 @@ class SingleShotDetector:
             detection_vector_queue (queue): where to write data
 
         """
-        while True:
+        while cfg.continue_processing:
             not_yet_processed_by_logger = []
             while not motion_vector_queue.empty():
                 motion_vector = motion_vector_queue.get()

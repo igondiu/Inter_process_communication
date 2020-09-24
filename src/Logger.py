@@ -2,6 +2,7 @@ import logging
 import multiprocessing as mp
 import random
 import time
+import config.config as cfg
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +19,7 @@ class Logger:
             motion_vector_queue (queue): contains all the message that must be printed
 
         """
-        while True:
+        while cfg.continue_processing:
             not_yet_processed_by_ssd = []
             while not motion_vector_queue.empty():
                 motion_vector = motion_vector_queue.get()
@@ -40,7 +41,7 @@ class Logger:
             detection_vector_queue (queue): contains all the message that must be printed
 
         """
-        while True:
+        while cfg.continue_processing:
             while not detection_vector_queue.empty():
                 detection_vector = detection_vector_queue.get()
                 logger.info("\nMessage from the DetectionVector Topic : \n")

@@ -26,12 +26,7 @@ FLASK_HOST = os.getenv("FLASK_HOST", "0.0.0.0")
 FLASK_SSL_CERT = os.getenv("FLASK_CERT", None)
 FLASK_PRIVATE_KEY = os.getenv("FLASK_PRIVATE_KEY", None)
 
-# ================================== MySQL ==============================================
-MYSQL_ADMIN_PASSWORD = (os.getenv("MYSQL_ROOT_PASSWORD", "root"))
-MYSQL_DATABASE = os.getenv("MYSQL_DATABASE", "opencellid")
-MYSQL_USER = os.getenv("MYSQL_USER", "test")
-MYSQL_PASSWORD = os.getenv("MYSQL_PASSWORD", "supersecret")
-MYSQL_HOST = os.getenv("MYSQL_HOST", "database")
 
 # ===================================PROGRAM OPTIONS==========================================
 LOG_VERBOSITY = strtobool(os.getenv("LOG_VERBOSITY", "true"))
+continue_processing = True
