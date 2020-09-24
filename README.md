@@ -4,7 +4,7 @@ This Python application launches a couple of processes which communicate with ea
 messaging pattern.  
 
 
-There are 4 main objects : 
+There are 5 main objects : 
 * MotionDetector (Publisher) : Gets a message from the Flask API, creates an object of the class MotionVector and adds 
 this object to the queue
 * SingleShotDetector (Publisher-Subcriber) : Gets the messages from the MotionVector's queue, process them and puts them 
@@ -19,7 +19,7 @@ Queues are using pipes and a few locks/semaphores, so this guarantees us that da
 
 ## Test the application
 Flask is using PORT 5000, make sure that the port is not already in use.    
-* 1 : Open to the folder `inter_process_communication` in a terminal window
+* 1 : Open the folder `inter_process_communication` in a terminal window
 
 * 2 : Copy and past this shell command in the terminal window :
 `docker-compose -f devops/docker_compose_inter_process_comm.yml up --build`  
